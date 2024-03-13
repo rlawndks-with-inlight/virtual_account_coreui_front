@@ -41,9 +41,7 @@ const AppSidebar = () => {
         <div style={{ fontWeight: 'bold', color: theme.color.yellow }}>{themeDnsData?.name} {user?.level < 40 ? getUserLevelByNumber(user?.level) : ''}</div>
       </CSidebarBrand>
       <CSidebarNav>
-        <SimpleBar>
-          <AppSidebarNav items={navigation()} />
-        </SimpleBar>
+        <AppSidebarNav items={navigation()} />
       </CSidebarNav>
       <CSidebarToggler
         style={{ maxWidth: '220px' }}
