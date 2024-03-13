@@ -95,7 +95,7 @@ const VirtualAccountBankners = () => {
         result = await apiServer(`${process.env.API_URL}/api/acct/v1/issuance`, 'create', { ...item, api_key: themeDnsData?.api_key, mid: router.query?.mid, });
         if (result?.tid) {
             alert("성공적으로 발급 되었습니다.");
-            navigate(`/virtual-account/result/${result?.ci}`);
+            router.push(`/virtual-account/result/${result?.ci}`);
         }
     }
     const oneWonCertification = async () => {
@@ -155,7 +155,7 @@ const VirtualAccountBankners = () => {
                                 {user?.level >= 40 &&
                                     <>
                                         <Content>
-                                            <Label>입금계좌</Label>
+                                            <Label>가맹점선택</Label>
                                             <CFormSelect size="sm"
                                                 value={item?.mid}
                                                 onChange={(e) => {
