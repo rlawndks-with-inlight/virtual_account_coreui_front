@@ -3,7 +3,7 @@ module.exports = {
   trailingSlash: true,
   env: {
     // HOST
-    HOST_API_KEY: 'http://localhost:8001',
+    HOST_API_KEY: process.env.HOST_API_KEY,
   },
   async rewrites() {
     return [
