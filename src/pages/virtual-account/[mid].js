@@ -9,8 +9,6 @@ const VirtualAccount = (props) => {
 
     return (
         <>
-            <VirtualAccountBankners />
-
             {themeDnsData?.deposit_corp_type == 1 &&
                 <>
                     <VirtualAccountBankners />
