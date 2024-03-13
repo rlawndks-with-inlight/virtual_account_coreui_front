@@ -380,42 +380,48 @@ const MerchandiseEdit = (props) => {
                                     <div>{oper?.label} 수수료 : </div>
                                     <CFormInput size='sm' className='content-input' value={item[`sales${oper?.num}_fee`]}
                                         placeholder={`${oper?.label} 수수료`}
+                                        type='number'
                                         onChange={(e) => {
                                             setItem(
                                                 {
                                                     ...item,
-                                                    [`sales${oper?.num}_fee`]: onlyNumberText(e.target.value)
+                                                    [`sales${oper?.num}_fee`]: e.target.value
                                                 }
                                             )
                                         }}
                                     />
                                     <div>%</div>
                                 </Content>
-                                <Content>
-                                    <div>{oper?.label} 지급 입금 수수료 : </div>
-                                    <CFormInput size='sm' className='content-input' value={item[`sales${oper?.num}_deposit_fee`]}
-                                        placeholder={`${oper?.label} 지급 입금 수수료`}
-                                        onChange={(e) => {
-                                            setItem(
-                                                {
-                                                    ...item,
-                                                    [`sales${oper?.num}_deposit_fee`]: onlyNumberText(e.target.value)
-                                                }
-                                            )
-                                        }}
-                                    />
-                                </Content>
+                                {themeDnsData?.is_use_deposit_operator == 1 &&
+                                    <>
+                                        <Content>
+                                            <div>{oper?.label} 지급 입금 수수료 : </div>
+                                            <CFormInput size='sm' className='content-input' value={item[`sales${oper?.num}_deposit_fee`]}
+                                                placeholder={`${oper?.label} 지급 입금 수수료`}
+                                                type='number'
+                                                onChange={(e) => {
+                                                    setItem(
+                                                        {
+                                                            ...item,
+                                                            [`sales${oper?.num}_deposit_fee`]: e.target.value
+                                                        }
+                                                    )
+                                                }}
+                                            />
+                                        </Content>
+                                    </>}
                             </>
                         ))}
                         <Content>
                             <div>가맹점 수수료 : </div>
                             <CFormInput size='sm' className='content-input' value={item[`mcht_fee`]}
                                 placeholder={`가맹점 수수료`}
+                                type='number'
                                 onChange={(e) => {
                                     setItem(
                                         {
                                             ...item,
-                                            [`mcht_fee`]: onlyNumberText(e.target.value)
+                                            [`mcht_fee`]: e.target.value
                                         }
                                     )
                                 }}
@@ -428,11 +434,12 @@ const MerchandiseEdit = (props) => {
                             <Content>
                                 <div>입금수수료 : </div>
                                 <CFormInput size='sm' className='content-input' value={item.deposit_fee}
+                                    type='number'
                                     onChange={(e) => {
                                         setItem(
                                             {
                                                 ...item,
-                                                ['deposit_fee']: onlyNumberText(e.target.value)
+                                                ['deposit_fee']: e.target.value
                                             }
                                         )
                                     }}
@@ -444,11 +451,12 @@ const MerchandiseEdit = (props) => {
                             <Content>
                                 <div>출금수수료 : </div>
                                 <CFormInput size='sm' className='content-input' value={item.withdraw_fee}
+                                    type='number'
                                     onChange={(e) => {
                                         setItem(
                                             {
                                                 ...item,
-                                                ['withdraw_fee']: onlyNumberText(e.target.value)
+                                                ['withdraw_fee']: e.target.value
                                             }
                                         )
                                     }}
