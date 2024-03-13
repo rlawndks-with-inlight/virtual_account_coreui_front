@@ -23,7 +23,7 @@ import { useEffect, useState } from 'react';
 import { useAuthContext } from 'src/components/auth/useAuthContext';
 import { Col, Content, Label, Row } from 'src/components/element/styled-componsts';
 import { useSettingsContext } from 'src/components/settings';
-import { apiManager } from 'src/utils/api-manager';
+import { apiManager, apiServer } from 'src/utils/api-manager';
 import { bankCodeList, virtualAccountUserTypeList } from 'src/utils/format';
 import { onlyNumberText } from 'src/utils/function';
 
