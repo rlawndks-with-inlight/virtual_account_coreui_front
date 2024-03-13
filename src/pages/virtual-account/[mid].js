@@ -1,5 +1,5 @@
 import { useSettingsContext } from "src/components/settings";
-import VirtualAccountBankners from "./corps/VirtualAccountBankners";
+import VirtualAccountBankners from "src/views/virtual-account/VirtualAccountBankners";
 import BlankLayout from "src/layout/BlankLayout";
 
 
