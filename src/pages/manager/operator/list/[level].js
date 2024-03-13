@@ -34,7 +34,7 @@ import { apiManager } from 'src/utils/api-manager';
 import { bankCodeList, getChip, operatorLevelList, payTypeList, userStatusList, userWithdrawHoldList, withdrawStatusList } from 'src/utils/format';
 import { commarNumber, getUserFee, getUserLevelByNumber } from 'src/utils/function';
 import { Icon } from '@iconify/react';
-import OperatorEdit from '../OperatorEdit';
+import OperatorEdit from 'src/views/operator/OperatorEdit';
 import { useRouter } from 'next/router';
 import DefaultLayout from 'src/layout/DefaultLayout';
 

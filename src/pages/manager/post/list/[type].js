@@ -17,17 +17,19 @@ import {
     CTableRow,
 } from '@coreui/react'
 import _ from 'lodash';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import DefaultLayout from 'src/layout/DefaultLayout';
 import { postTypeList } from 'src/utils/format';
 
 
 const PostList = () => {
-    ;
+    const router = useRouter();
     const [postType, setPostType] = useState(0);
 
     useEffect(() => {
-        setPostType(parseInt(location.pathname.split('/')[3]))
-    }, [location])
+        setPostType(parseInt(router.query?.type))
+    }, [router.asPath])
     return (
         <>
             <CRow>
@@ -43,5 +45,5 @@ const PostList = () => {
         </>
     )
 }
-
+PostList.getLayout = (page) => <DefaultLayout>{page}</DefaultLayout>;
 export default PostList;

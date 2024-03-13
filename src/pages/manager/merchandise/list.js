@@ -35,7 +35,7 @@ import { apiManager } from 'src/utils/api-manager';
 import { bankCodeList, operatorLevelList, payTypeList, virtualAcctLinkStatusList, withdrawStatusList } from 'src/utils/format';
 import { commarNumber, getUserFee, getUserLevelByNumber, getUserStatusByNum } from 'src/utils/function';
 import { Icon } from '@iconify/react';
-import MerchandiseEdit from './MerchandiseEdit';
+import MerchandiseEdit from 'src/views/merchandise/MerchandiseEdit';
 import { useRouter } from 'next/router';
 import DefaultLayout from 'src/layout/DefaultLayout';
 
