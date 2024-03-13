@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import { CBadge } from '@coreui/react'
 import { Icon } from '@iconify/react'
 import { useAuthContext } from './auth/useAuthContext'
+import theme from 'src/theme/theme'
 
 const AppSidebarNav = ({ items }) => {
   const router = useRouter()
@@ -23,27 +24,18 @@ const AppSidebarNav = ({ items }) => {
       </>
     )
   }
-
-  const handleLogout = async () => {
-    await logout()
-    router.push('/login')
-  }
-
   const navItem = (item, index) => {
     const { component: Component, name, badge, icon, style, ...rest } = item
     return (
-      <div style={{ ...style }} onClick={async () => {
+      <div style={{ ...style, cursor: 'pointer' }} onClick={async () => {
         if (rest.to == '/logout') {
           await logout();
           window.location.href = '/login'
+        } else {
+          router.push(rest.to)
         }
-      }} key={index}>
+      }} key={index} >
         <Component
-          {...(rest.to &&
-            !rest.items && {
-            as: 'a',
-            href: rest.to,
-          })}
           key={index}
           {...rest}
         >
@@ -60,7 +52,7 @@ const AppSidebarNav = ({ items }) => {
         idx={String(index)}
         key={index}
         toggler={navLink(name, icon)}
-        visible={router.pathname.startsWith(to)}
+        visible={router.asPath.startsWith(to)}
         {...rest}
       >
         {item.items?.map((item, index) =>

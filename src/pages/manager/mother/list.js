@@ -29,6 +29,7 @@ import theme from '../../../theme/theme'
 import { apiManager } from 'src/utils/api-manager';
 import { bankCodeList, getChip, operatorLevelList, payTypeList } from 'src/utils/format';
 import { commarNumber, getUserFee, getUserLevelByNumber } from 'src/utils/function';
+import DefaultLayout from 'src/layout/DefaultLayout';
 
 
 const MotherHistoryList = () => {
@@ -244,5 +245,5 @@ const MotherHistoryList = () => {
         </>
     )
 }
-
+MotherHistoryList.getLayout = (page) => <DefaultLayout>{page}</DefaultLayout>;
 export default MotherHistoryList;
