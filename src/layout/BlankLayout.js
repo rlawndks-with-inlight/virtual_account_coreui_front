@@ -8,7 +8,9 @@ const BlankLayout = ({ children }) => {
         <>
             {themeDnsData?.id > 0 &&
                 <>
-                    {children}
+                    <div>
+                        {children}
+                    </div>
                 </>}
         </>
     )
