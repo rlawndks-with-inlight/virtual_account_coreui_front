@@ -443,12 +443,12 @@ const MerchandiseEdit = (props) => {
                         <Col>
                             <Content>
                                 <div>출금수수료 : </div>
-                                <CFormInput size='sm' className='content-input' value={item.deposit_fee}
+                                <CFormInput size='sm' className='content-input' value={item.withdraw_fee}
                                     onChange={(e) => {
                                         setItem(
                                             {
                                                 ...item,
-                                                ['deposit_fee']: onlyNumberText(e.target.value)
+                                                ['withdraw_fee']: onlyNumberText(e.target.value)
                                             }
                                         )
                                     }}
