@@ -3,19 +3,19 @@ module.exports = {
   trailingSlash: true,
   env: {
     // HOST
-    HOST_API_KEY: process.env.HOST_API_KEY,
+    BACK_URL: process.env.BACK_URL,
   },
   async rewrites() {
     return [
       {
         source: "/api/:path*",
-        destination: `${process.env.HOST_API_KEY}/api/:path*`,
+        destination: `${process.env.BACK_URL}/api/:path*`,
       },
     ]
   },
   env: {
-    HOST_API_KEY: process.env.HOST_API_KEY,
-    API_SERVER: process.env.API_SERVER,
-    SOCKET_SERVER: process.env.SOCKET_SERVER,
+    BACK_URL: process.env.BACK_URL,
+    API_URL: process.env.API_URL,
+    SOCKET_URL: process.env.SOCKET_URL,
   }
 };

@@ -8,4 +8,4 @@ export const LOCALSTORAGE = {
     NOT_SEARCH_OPTION: "not_search_option",
     USER_APP_MEMBERSHIP_OBJ: "user_app_membership_obj"
 }
-export const socket = io(process.env.SOCKET_SERVER);
+export const socket = io(process.env.SOCKET_URL);

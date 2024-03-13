@@ -60,7 +60,7 @@ App.getInitialProps = async (context) => {
     let head_data = {}
     let host = '';
     host = ctx?.req?.headers.host.split(':')[0];
-    const url = `${process.env.HOST_API_KEY}/api/domain?dns=${process.env.FRONT_URL || host}`;
+    const url = `${process.env.BACK_URL}/api/domain?dns=${process.env.FRONT_URL || host}`;
     const res = await fetch(url);
     head_data = await res.json();
     return {

@@ -59,7 +59,7 @@ const Withdraw = () => {
         if (window.confirm('출금요청 하시겠습니까?')) {
             let result = undefined
             if (themeDnsData?.setting_obj?.api_withdraw_version > 0) {
-                result = await apiServer(`${process.env.API_SERVER}/api/withdraw/v${themeDnsData?.setting_obj?.api_withdraw_version}`, 'create', {
+                result = await apiServer(`${process.env.API_URL}/api/withdraw/v${themeDnsData?.setting_obj?.api_withdraw_version}`, 'create', {
                     api_key: themeDnsData?.api_key,
                     mid: user?.mid,
                     withdraw_amount: item?.withdraw_amount,
